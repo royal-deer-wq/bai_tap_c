@@ -1,30 +1,38 @@
-#include <conio.h> 
-#include<stdio.h> 
-#include <math.h> 
-int main()
-{
-	int mang[105];
-	int i, min, max;
-	int m,n;
-	printf("\n Nhap mang "); 
-	for (i=0; i<=105; i++)
-		scanf("%d", &mang [i]);
-	/* Tìm giá trị lớn nhất và nhỏ nhất */
-	min = max = mang[0];
-	for (i=0; i<105; i++)
-	{
-		if (max	< mang [i])
-			max = mang[i];
-		if (min > mang [i])
-			min = mang [i];
-}
-printf("\n Gia tri Max- td ", max); 
-printf(" dat tai cac vi tri: \n"); 
-for (i=0; i<105; i++)
-	if (max == mang [i]) printf("%d ",i);
-printf("\n Gia tri min= %d ", min); 
-printf(" dat tai cac vi tri: \n"); 
-for (i=0; i<105; i++)
-	if (min == mang [i]) printf("%d ",i); 
-getch();
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+    int mang[105];
+    int min, max;
+    cout << "--- Chuong trinh tim Max/Min va vi tri trong mang ---\n";
+    cout << "Nhap 105 phan tu cho mang:\n";
+    for (int i = 0; i < 105; i++) {
+        cout << "Phan tu [" << i << "]: ";
+        cin >> mang[i];
+    }
+    min = max = mang[0];
+    for (int i = 1; i < 105; i++) {
+        if (mang[i] > max) {
+            max = mang[i];
+        }
+        if (mang[i] < min) {
+            min = mang[i];
+        }
+    }
+    cout << "\nGia tri Max = " << max << endl;
+    cout << "Dat tai cac vi tri: ";
+    for (int i = 0; i < 105; i++) {
+        if (mang[i] == max) {
+            cout << i << " ";
+        }
+    }
+    cout << "\n\nGia tri Min = " << min << endl;
+    cout << "Dat tai cac vi tri: ";
+    for (int i = 0; i < 105; i++) {
+        if (mang[i] == min) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+    return 0;
 }
