@@ -1,16 +1,22 @@
-#include<stdio.h> 
-#include<conio.h> 
-int main(void)
- { int a[100], i, sum = 0;
-	printf("\n chuong trinh tinh trung binh cong\n");
-	printf("cua 100 so nguyen");
-for (i = 0; i < 100; i++)
-{ printf("\nNhap vao so thu d: ", i + 1);
- scanf("%d", &a[i]); /* Nhập giá trị cho số thứ i t */
-	}
-/* Tính tổng giá trị các số */
-for (i = 0; i < 100; i++)
-	sum += a[i]; /* Cộng dồn từng số vào sum */ 
-printf("Trung binh cong la:%6.2f\n",(float)sum/100);
-getch();
+#include <iostream>
+#include <iomanip> // Thư viện để định dạng số thập phân
+using namespace std;
+int main() {
+    int a[100], sum = 0;
+    cout << "\n--- Chuong trinh tinh trung binh cong cua 100 so nguyen ---\n";
+    // Vòng lặp nhập dữ liệu
+    for (int i = 0; i < 100; i++) {
+        cout << "Nhap vao so thu " << i + 1 << ": ";
+        cin >> a[i];
+    }
+    // Tính tổng giá trị các số
+    for (int i = 0; i < 100; i++) {
+        sum += a[i];
+    }
+    // Tính và in kết quả trung bình cộng
+    // Ép kiểu (float) để phép chia có phần thập phân
+    float trungBinh = static_cast<float>(sum) / 100;
+    cout << fixed << setprecision(2); // Định dạng lấy 2 chữ số sau dấu phẩy
+    cout << "Trung binh cong la: " << trungBinh << endl;
+    return 0;
 }
