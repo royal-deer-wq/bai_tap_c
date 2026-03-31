@@ -1,23 +1,23 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <vector>
+using namespace std;
 int main() {
     int i, n, k = 0;
     int *x;
-    printf("\nNhap so phan tu cua day: ");
-    scanf("%d", &n);
-    x = (int*) malloc(n * sizeof(int));
+    cout << "\nNhap so phan tu cua day: ";
+    cin >> n;
+    x = new int[n];
     for (i = 0; i < n; i++) {
-        printf("Phan tu thu %d: ", i);
-        scanf("%d", &x[i]);
+        cout << "Phan tu thu " << i << ": ";
+        cin >> x[i];
     }
-    printf("\nDay cac so le la: ");
+    cout << "\nDay cac so le la: ";
     for (i = 0; i < n; i++) {
         if (x[i] % 2 != 0) {
-            printf("%d ", x[i]);
+            cout << x[i] << " ";
             k++;
         }
     }
-    printf("\nCo tat ca %d so le", k);
-    free(x);
-    return 0;
+    cout << "\nCo tat ca " << k << " so le" << endl;
+    delete[] x;
 }
