@@ -1,22 +1,23 @@
-#include <stdio.h>
-#include <stdlib.h>
-int main(void)
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
 {
     int n, i, s = 0;
     float *x, tduong = 0;
-    printf("\nCho biet gia tri cua n: ");
-    scanf("%d", &n);
-    x = (float*) malloc(n * sizeof(float));
+    cout << "\nCho biet gia tri cua n: ";
+    cin >> n;
+    x = new float[n];
     for (i = 0; i < n; i++) {
-        printf("Phan tu thu %d: ", i);
-        scanf("%f", &x[i]);
+        cout << "Phan tu thu " << i << ": ";
+        cin >> x[i];
         if (x[i] >= 0) {
             tduong += x[i];
             s++;
         }
     }
-    printf("\nCo %d so duong", s);
-    printf("\nTong cua %d so duong la: %.2f", s, tduong);
-    free(x);
-    return 0;
+    cout << "\nCo " << s << " so duong";
+    cout << fixed << setprecision(2);
+    cout << "\nTong cua " << s << " so duong la: " << tduong << endl;
+    delete[] x;
 }
