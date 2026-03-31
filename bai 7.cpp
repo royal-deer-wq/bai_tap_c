@@ -1,30 +1,31 @@
-#include<conio.h>
-#include<stdio.h>
+#include <iostream>
+#include <iomanip>
+using namespace std;
 int main() {
-	int m, n;
-	int i,j;
-	int a[100] [50];
-	do {
-		printf("\n Nhap so hang m = "); 
-		scanf("%d", &n);
-	}
-	while ((m<1) || (m>100));
-	do {
-		printf("\n Nhap so cot n = "); 
-		scanf("%d", &n);
-	}
-while ((n-1) || (n>50));
-printf("\n Nhap mang a:\n");
-for (i=0;i<m;i++)
-	for (j=0;j<n;j++) {
-		printf("\n Nhap a[d] [d] := ",1,5);
-		scanf("%f", (a+1)+1);
-	}
-printf("\n Mang a sau khi nhập là: \n");
-for (i=0;i<n;i++){
-	for (j=0;j<n;j++)
-	printf("%f",a[i][j]);
-	printf("\n");
-}
-getch();
+    int m, n;
+    int i, j;
+    float a[100][50];
+    do {
+        cout << "\nNhap so hang m = ";
+        cin >> m;
+    } while (m < 1 || m > 100);
+    do {
+        cout << "Nhap so cot n = ";
+        cin >> n;
+    } while (n < 1 || n > 50);
+    cout << "\nNhap mang a:\n";
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            cout << "a[" << i << "][" << j << "] = ";
+            cin >> a[i][j];
+        }
+    }
+    cout << "\nMang a sau khi nhap la:\n";
+    cout << fixed << setprecision(2);
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            cout << setw(8) << a[i][j];
+        }
+        cout << endl;
+    }
 }
